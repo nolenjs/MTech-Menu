@@ -11,7 +11,6 @@ import {MenuPage} from '../pages/menu/menu';
 import {HttpClientModule} from '@angular/common/http';
 import { UpperCasePipe } from '@angular/common';
 import {LoginPage} from "../pages/login/login";
-import { CurrencyPipe } from '@angular/common';
 
 import {AngularFireDatabaseModule} from "angularfire2/database";
 import {AngularFireAuthModule} from "angularfire2/auth";
@@ -35,12 +34,11 @@ let config = {
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
     IonicModule.forRoot(MyApp),
+    HttpClientModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFireModule.initializeApp(config)
-
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -54,8 +52,6 @@ let config = {
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     MenuApiProvider,
-    UpperCasePipe,
-    CurrencyPipe,
     UpperCasePipe
   ]
 })

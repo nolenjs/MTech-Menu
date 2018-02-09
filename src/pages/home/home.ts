@@ -19,5 +19,8 @@ export class HomePage {
   gotToLogin(){
     this.navCtrl.push(LoginPage);
   }
+  openPage() {
+    
+  }
 
 }
