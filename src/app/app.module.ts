@@ -8,6 +8,8 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { MenuApiProvider } from '../providers/menu-api/menu-api';
 import {MenuPage} from '../pages/menu/menu';
+import {HttpClientModule} from '@angular/common/http';
+import { UpperCasePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import {MenuPage} from '../pages/menu/menu';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -29,7 +32,8 @@ import {MenuPage} from '../pages/menu/menu';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    MenuApiProvider
+    MenuApiProvider,
+    UpperCasePipe
   ]
 })
 export class AppModule {}
