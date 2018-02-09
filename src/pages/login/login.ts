@@ -16,14 +16,31 @@ export class LoginPage {
 
   }
 
-  signUp(email, password){
-    this.firebase.auth.createUserWithEmailAndPassword(email, password).catch(function(error) {
+  signUp(){
+    this.firebase.auth.createUserWithEmailAndPassword(this.email, this.password).catch(function(error) {
       // Handle Errors here.
+      console.log(this.email)
       let errorCode = error.code;
       let errorMessage = error.message;
       // [START_EXCLUDE]
       if (errorCode == 'auth/weak-password') {
         alert('The password is too weak.');
+      } else {
+        alert(errorMessage);
+      }
+      console.log(error);
+      // [END_EXCLUDE]
+    });
+  }
+
+  signIn(){
+    this.firebase.auth.signInWithEmailAndPassword(this.email, this.password).catch(function(error) {
+      // Handle Errors here.
+      let errorCode = error.code;
+      let errorMessage = error.message;
+      // [START_EXCLUDE]
+      if (errorCode === 'auth/wrong-password') {
+        alert('Wrong password.');
       } else {
         alert(errorMessage);
       }

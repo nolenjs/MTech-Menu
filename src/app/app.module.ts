@@ -13,8 +13,8 @@ import { UpperCasePipe } from '@angular/common';
 import {LoginPage} from "../pages/login/login";
 import { CurrencyPipe } from '@angular/common';
 
-import { FirebaseProvider } from '../providers/firebase/firebase';
 import {AngularFireDatabaseModule} from "angularfire2/database";
+import {AngularFireAuthModule} from "angularfire2/auth";
 import {AngularFireModule} from "angularfire2";
 
 let config = {
@@ -38,6 +38,7 @@ let config = {
     HttpClientModule,
     IonicModule.forRoot(MyApp),
     AngularFireDatabaseModule,
+    AngularFireAuthModule,
     AngularFireModule.initializeApp(config)
 
   ],
@@ -53,7 +54,6 @@ let config = {
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     MenuApiProvider,
-    FirebaseProvider,
     UpperCasePipe,
     CurrencyPipe,
     UpperCasePipe
