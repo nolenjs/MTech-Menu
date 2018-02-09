@@ -15,4 +15,18 @@
 
 <ion-content padding>
   <ion-label>Menu</ion-label>
+
+  <ion-card *ngFor="let breakfast of breakfast" style="height: 500px;">
+    <ion-card-title>{{breakfast.itemName}}</ion-card-title>
+    <ion-card-header>{{breakfast.description}}</ion-card-header>
+    <ion-card-content>
+      <ion-list radio-group [(ngModel)]="relationship">
+        <ion-item *ngFor=" let breakfastOptions of breakfast.options">
+          <ion-label>{{breakfastOptions.options}}</ion-label>
+          <ion-radio value="" checked></ion-radio>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>

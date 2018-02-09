@@ -9,29 +9,35 @@ import { HomePage } from '../pages/home/home';
 import { MenuApiProvider } from '../providers/menu-api/menu-api';
 import {MenuPage} from '../pages/menu/menu';
 import {HttpClientModule} from "@angular/common/http";
+import { UpperCasePipe } from '@angular/common';
+import {LoginPage} from "../pages/login/login";
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    MenuPage
+    MenuPage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    MenuPage
+    MenuPage,
+    LoginPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    MenuApiProvider
+    MenuApiProvider,
+    UpperCasePipe
   ]
 })
 export class AppModule {}
