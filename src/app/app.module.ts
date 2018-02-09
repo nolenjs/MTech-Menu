@@ -12,6 +12,19 @@ import {HttpClientModule} from "@angular/common/http";
 import { UpperCasePipe } from '@angular/common';
 import {LoginPage} from "../pages/login/login";
 
+import { FirebaseProvider } from '../providers/firebase/firebase';
+import {AngularFireDatabaseModule} from "angularfire2/database";
+import {AngularFireModule} from "angularfire2";
+
+let config = {
+  apiKey: "AIzaSyCCsdWt5E2-79LatdNWu77rKi2Bpe2cWOw",
+  authDomain: "mtechmenu.firebaseapp.com",
+  databaseURL: "https://mtechmenu.firebaseio.com",
+  projectId: "mtechmenu",
+  storageBucket: "mtechmenu.appspot.com",
+  messagingSenderId: "382312556211"
+};
+
 @NgModule({
   declarations: [
     MyApp,
@@ -23,7 +36,9 @@ import {LoginPage} from "../pages/login/login";
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(config)
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -37,7 +52,9 @@ import {LoginPage} from "../pages/login/login";
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     MenuApiProvider,
-    UpperCasePipe
+    FirebaseProvider,
+    UpperCasePipe,
+    FirebaseProvider
   ]
 })
 export class AppModule {}
