@@ -8,9 +8,10 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { MenuApiProvider } from '../providers/menu-api/menu-api';
 import {MenuPage} from '../pages/menu/menu';
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClientModule} from '@angular/common/http';
 import { UpperCasePipe } from '@angular/common';
 import {LoginPage} from "../pages/login/login";
+import { CurrencyPipe } from '@angular/common';
 
 import { FirebaseProvider } from '../providers/firebase/firebase';
 import {AngularFireDatabaseModule} from "angularfire2/database";
@@ -54,7 +55,8 @@ let config = {
     MenuApiProvider,
     FirebaseProvider,
     UpperCasePipe,
-    FirebaseProvider
+    CurrencyPipe,
+    UpperCasePipe
   ]
 })
 export class AppModule {}

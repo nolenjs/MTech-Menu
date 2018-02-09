@@ -16,7 +16,9 @@ import {MenuApiProvider} from '../../providers/menu-api/menu-api';
 })
 export class MenuPage {
 
-  breakfast: any;
+  hour = new Date().getHours();
+
+  menuInfo: any;
 
   constructor(
     public navCtrl: NavController,
@@ -27,14 +29,30 @@ export class MenuPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad MenuPage');
 
-    this.getBreakfast();
+    if(this.hour >= 7  && this.hour < 11) {
+      this.getBreakfast();
+    }
+
+    if(this.hour >=11  && this.hour < 20) {
+      this.getLunchandDinner();
+    }
+    else {
+      this.menuInfo = '';
+    }
   }
 
   getBreakfast(){
     this.menuProvider.getBreakfastMenuData().subscribe((breakfastMenu: any)=>{
-      this.breakfast = breakfastMenu;
+      this.menuInfo = breakfastMenu;
 
-      console.log(this.breakfast);
+      console.log(this.menuInfo);
+    });
+  }
+  getLunchandDinner(){
+    this.menuProvider.getLunchMenuData().subscribe((lunchMenu: any)=>{
+      this.menuInfo = lunchMenu;
+
+      console.log(this.menuInfo);
     });
   }
 

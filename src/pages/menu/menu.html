@@ -7,25 +7,32 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>menu</ion-title>
+    <ion-title>menus</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-  <ion-label>Menu</ion-label>
 
-  <ion-card *ngFor="let breakfast of breakfast" style="height: 500px;">
-    <ion-card-title>{{breakfast.itemName}}</ion-card-title>
-    <ion-card-header>{{breakfast.description}}</ion-card-header>
+  <ion-card radio-group *ngFor="let food of menuInfo" style="margin: auto">
+    <div class="ionCardTitle">
+      <ion-card-title>{{food.itemName | uppercase}}</ion-card-title>
+      <ion-toggle></ion-toggle>
+    </div>
+    <h2 style="text-align: center">{{food.description}}</h2>
+    <h2 style="text-align: center">{{food.price | currency}}</h2>
     <ion-card-content>
-      <ion-list radio-group [(ngModel)]="relationship">
-        <ion-item *ngFor=" let breakfastOptions of breakfast.options">
-          <ion-label>{{breakfastOptions.options}}</ion-label>
-          <ion-radio value="" checked></ion-radio>
-        </ion-item>
-      </ion-list>
+
+
+
+    <ion-list radio-group *ngFor="let option of food.options" >
+      <ion-item>
+        <ion-label>{{option}}</ion-label>
+        <ion-radio value=""></ion-radio>
+      </ion-item>
+    </ion-list>
+
     </ion-card-content>
   </ion-card>
 
