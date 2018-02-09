@@ -1,3 +1,13 @@
 page-menu {
-
+  ion-card{
+    .ionCardTitle{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      ion-toggle{
+        margin-left: 10px;
+      }
+    }
+  }
 }

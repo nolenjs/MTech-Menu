@@ -10,6 +10,7 @@ import { MenuApiProvider } from '../providers/menu-api/menu-api';
 import {MenuPage} from '../pages/menu/menu';
 import {HttpClientModule} from '@angular/common/http';
 import { UpperCasePipe } from '@angular/common';
+import { CurrencyPipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { UpperCasePipe } from '@angular/common';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     MenuApiProvider,
+    CurrencyPipe,
     UpperCasePipe
   ]
 })
