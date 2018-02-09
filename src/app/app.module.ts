@@ -10,13 +10,15 @@ import { MenuApiProvider } from '../providers/menu-api/menu-api';
 import {MenuPage} from '../pages/menu/menu';
 import {HttpClientModule} from '@angular/common/http';
 import { UpperCasePipe } from '@angular/common';
+import {LoginPage} from "../pages/login/login";
 import { CurrencyPipe } from '@angular/common';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    MenuPage
+    MenuPage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,8 @@ import { CurrencyPipe } from '@angular/common';
   entryComponents: [
     MyApp,
     HomePage,
-    MenuPage
+    MenuPage,
+    LoginPage
   ],
   providers: [
     StatusBar,
