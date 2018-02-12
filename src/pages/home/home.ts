@@ -1,16 +1,27 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import {MenuPage} from '../menu/menu';
-import {LoginPage} from '../login/login';
+import { MenuPage } from '../menu/menu';
+import { LoginPage } from '../login/login';
+import { NavParams } from 'ionic-angular/navigation/nav-params';
+import { NavPush } from 'ionic-angular/components/nav/nav-push';
+
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
+  // template: `<ion-nav [root]="rootPage"></ion-nav>`
+  // template: `<!--<button ion-button [navPush]="pushPage" [navParams]="params">Go</button>-->`
+
 })
+
+
+
 export class HomePage {
-
-  constructor(public navCtrl: NavController) {
-
+    // params: Object;
+    // pushPage: any;
+  constructor(public navCtrl: NavController,  ) {
+// this.pushPage = LoginPage;
+//     this.params = { id: 42 };
   }
 
   gotToHome(){
@@ -20,7 +31,10 @@ export class HomePage {
     this.navCtrl.push(LoginPage);
   }
   openPage() {
-    
+
   }
 
-}
+
+  }
+
+
