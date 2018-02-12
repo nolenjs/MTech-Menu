@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { MenuPage } from '../menu/menu';
 import { LoginPage } from '../login/login';
-import { NavParams } from 'ionic-angular/navigation/nav-params';
-import { NavPush } from 'ionic-angular/components/nav/nav-push';
 
 
 @Component({
